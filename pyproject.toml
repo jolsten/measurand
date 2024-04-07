@@ -27,6 +27,7 @@ dev = [
     "setuptools-scm",
     "build",
     "wheel",
+    "ruff",
     "pytest",
     "pytest-cov",
     "hypothesis",
@@ -45,4 +46,4 @@ addopts = "--cov=measurand --cov-report html"
 testpaths = ["tests"]
 
 [tool.ruff.isort]
-known-first-party = ["carbonation*"]
+known-first-party = ["measurand*"]
