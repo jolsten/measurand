@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "measurand"
+authors = [{ name = "Jonathan Olsten", email = "jonathan.olsten@gmail.com" }]
+description = "Build arbitrary parameters from binary data"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = ["typeconvert==0.2", "numpy<1.26,>=1.19 ", "numba>=0.57", "pyarrow>=7.0.0", "pydantic>=2.0"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "setuptools",
+    "setuptools-scm",
+    "build",
+    "wheel",
+    "pytest",
+    "pytest-cov",
+    "hypothesis",
+    "mkdocs",
+    "mkdocstrings",
+]
+[tool.setuptools]
+packages = ["measurand"]
+
+[tool.setuptools_scm]
+parentdir_prefix_version = "measurand-"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=measurand --cov-report html"
+testpaths = ["tests"]
+
+[tool.ruff.isort]
+known-first-party = ["carbonation*"]
