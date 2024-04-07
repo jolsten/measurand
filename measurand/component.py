@@ -7,7 +7,7 @@ import pyarrow as pa
 import pyarrow.compute as pac
 from pydantic import BaseModel, Field
 
-from .utils import (
+from measurand.utils import (
     _bit_range_to_mask_and_shift,
     _range_to_tuple,
     _reverse_bits_ndarray,
