@@ -1,6 +1,11 @@
 import re
 from functools import cached_property
-from typing import Annotated, Callable, Optional, Union
+from typing import Callable, Optional, Union
+
+try:
+    from typing import Annotated
+except ImportError:
+    from typing_extensions import Annotated
 
 import numpy as np
 import pyarrow as pa
